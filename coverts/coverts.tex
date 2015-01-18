@@ -1,0 +1,94 @@
+\documentclass{40k}
+
+%%-- For cards
+\pgfmathsetmacro{\cardroundingradius}{2mm}
+\pgfmathsetmacro{\striproundingradius}{1mm}
+\pgfmathsetmacro{\ruleheight}{0.1}
+\pgfmathsetmacro{\stripwidth}{1.1}
+\pgfmathsetmacro{\stripheight}{1.1}
+\pgfmathsetmacro{\strippadding}{0.1}
+\pgfmathsetmacro{\textpadding}{0.3}
+\newcommand{\stripcolor}{black}
+%%-------
+
+\input{covertcard}
+
+\begin{document}
+\squelchbackground%
+
+\noindent%
+\covertcard%
+{Sabotage}%
+{You've been sent behind enemy lines to cut power lines, destroy
+  equipment, and place boobytraps.}%
+{After all deployment, secretly select a piece of terrain wholely
+  within your opponent's deployment zone.  Treating it as an objective
+  marker for which (only) Elite and Fast Attack units have Objective
+  Secured, you succeed if you control it at the end of any of your
+  turns after the first.}%
+{Your alliance gains half the maximum victory points possible this
+  match and your choice of installations has no effect until the end
+  of the next round.}  \hfill%
+\covertcard%
+{Interrogation}%
+{Command has ordered you to capture and interrogate prisoners.  It's
+  against your usual ``No mercy'' philosophy, but they're in charge.}%
+{After all deployment, secretly select an enemy character (independent
+  or otherwise).  You succeed if that character is removed as a
+  casualty and you pass a~D6 test against its role:
+
+\bigskip
+\begin{minipage}{1.0\linewidth}\centering
+\textbf{HQ} 2+ ~~ \textbf{Elite} 3+ ~~ \textbf{Troop} 5+\\
+\textbf{Fast} 4+ ~~ \textbf{Heavy} 4+  
+\end{minipage}}%
+{Your alliance gains half the maximum victory points possible this
+  match and your opponent's alliance must reveal their strategic
+  campaign session objective.}
+
+\clearpage
+
+\noindent%
+\covertcard%
+{Sweep \& Scan}%
+{Your troops are on the roll, rapidly covering ground in the hunt for
+  intel.  You might miss something moving so fast, but time's up.}%
+{At the end of each of your turns beginning with Turn~2, secretly make
+  a note for each primary objective marker outside your deployment
+  zone which you control and have not previously controlled.  If by
+  the end of the game you have controlled at least two at some point,
+  you succeed.}%
+{Your alliance pulls a search result for each continent on which a
+  player achieved this mission as though it shared control.}
+
+\vfill
+
+\noindent%
+\covertcard%
+{Data Port}%
+{You've detected an active, unsecured data port among the wreckage
+  strewn about.  If you can hold it long enough, you might be able to
+  extract something useful.}%
+{After all deployment concludes, secretly select and record a primary
+  objective marker outside your deployment zone.  You succeed if you
+  control it at the end of your turn for any two turns in a row,
+  excluding Turn~1.}%
+{In addition to the points you earn as usual, your alliance gains half
+  the maximum victory points possible for this match toward its
+  overall and this continent.} \hfill%
+\covertcard%
+{Signals}%
+{You're tracking an enemy HQ signal.  If you can triangulate it,
+  you'll know where they're based.}%
+{After all deployment concludes, secretly select and record a table
+  quarter not on your table edge.  At game end if you have a scoring
+  unit in that quarter and your opponent does not, you succeed.  Units
+  with Objective Secured trump those without.}%
+{In addition to the points you earn as usual, your alliance gains half
+  the maximum victory points possible for this match toward its
+  overall and this continent.}
+
+\clearpage
+\restorebackground%
+
+\end{document}

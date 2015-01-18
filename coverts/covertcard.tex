@@ -1,0 +1,60 @@
+\newcommand{\coverttitle}{CAMPAIGN COVERT}
+\newcommand{\covertstory}{Your must accomplish your quest!}
+\newcommand{\covertmission}{Any}%
+\newcommand{\covertsuccess}{Either}%
+
+\pgfmathsetmacro{\covertcardwidth}{9.25}
+\pgfmathsetmacro{\covertcardheight}{12.45}
+
+\newcommand{\covertstripfontsize}{\huge}
+\newcommand{\covertcaptionfontsize}{\LARGE}
+\newcommand{\coverttextfontsize}{\large}
+
+\newcommand{\covertstriptext}%
+  {COVERT MISSION\hspace{0.5em}\rotatebox[origin=c]{-90}{\includegraphics[width=0.6cm]{icon-skull}}}
+
+
+%%----------------------------------------------------------------------
+%%----------------------------------------------------------------------
+\newcommand{\drawcovertcard}{%
+\begin{tikzpicture}%
+  \clip (-0.05, -0.05) rectangle (\covertcardwidth+.05, \covertcardheight+.05);
+
+  %%-- Draw the card back and outline
+  \draw[rounded corners=\cardroundingradius,fill=white,draw=none] (0,0)
+    rectangle (\covertcardwidth,\covertcardheight);
+  \node[above left] at (\covertcardwidth+0.1, -0.1)
+    {\includegraphics[width=\covertcardwidth cm]{background-skull}};
+  \draw[rounded corners=\cardroundingradius] (0,0) rectangle
+    (\covertcardwidth,\covertcardheight);
+
+  %%-- Draw the side strip
+  \fill[\stripcolor,rounded corners=\striproundingradius]
+    (\strippadding,\strippadding) rectangle
+    (\strippadding+\stripwidth,\covertcardheight-\strippadding)
+    node[rotate=90,above left,white,font=\covertstripfontsize\fontfamily{ptm}\selectfont] {\raisebox{0pt}[15pt][3pt]{\vbox to -18pt{}} \covertstriptext};
+
+  %%-- Draw the mission info
+    \node[text width=(\covertcardwidth-\strippadding-\stripwidth-2*\textpadding)*1cm,
+          below right,inner sep=0] at
+          (\strippadding+\stripwidth+\textpadding,\covertcardheight-\textpadding)
+    {\coverttextfontsize%
+      {\covertcaptionfontsize\sc\fontfamily{ptm}\selectfont\coverttitle}
+
+      \smallskip\noindent\textit{\covertstory}
+
+      \bigskip\noindent\textbf{Mission:} \covertmission
+
+      \bigskip\noindent\textbf{Success:} \covertsuccess
+    };
+
+\end{tikzpicture}
+}
+
+\newcommand{\covertcard}[4]{%
+\renewcommand{\coverttitle}{#1}%
+\renewcommand{\covertstory}{#2}%
+\renewcommand{\covertmission}{#3}%
+\renewcommand{\covertsuccess}{#4}%
+\drawcovertcard%
+}

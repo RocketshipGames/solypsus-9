@@ -1,4 +1,4 @@
-\documentclass{40k}
+\documentclass[nobackground]{40k}
 
 %%-- For cards
 \pgfmathsetmacro{\cardroundingradius}{2mm}
@@ -14,7 +14,6 @@
 \input{covertcard}
 
 \begin{document}
-\squelchbackground%
 
 \noindent%
 \covertcard%
@@ -46,7 +45,33 @@
   match and your opponent's alliance must reveal their strategic
   campaign session objective.}
 
-\clearpage
+\noindent%
+\covertcard%
+{Data Port}%
+{You've detected an active, unsecured data port among the wreckage
+  strewn about.  If you can hold it long enough, you might be able to
+  extract something useful.}%
+{After all deployment concludes, secretly select and record a primary
+  objective marker outside your deployment zone.  You succeed if you
+  control it at the end of your turn for any two turns in a row,
+  excluding Turn~1.}%
+{Your alliance gains half the maximum victory points possible this
+  match and can examine~2 commands of your opponent's alliance before
+  finalizing its own..} \hfill%
+\covertcard%
+{Signals}%
+{You're tracking an enemy HQ signal.  If you can triangulate it,
+  you'll know where they're based.}%
+{After all deployment concludes, secretly select and record a table
+  quarter not on your table edge.  At game end if you have a scoring
+  unit in that quarter and your opponent does not, you succeed.  Units
+  with Objective Secured trump those without.}%
+{Your alliance gains half the maximum victory points possible this
+  match and can swap any~2 of its commands after they are revealed for
+  the next round.}
+
+\end{document}
+
 
 \noindent%
 \covertcard%
@@ -60,35 +85,3 @@
   you succeed.}%
 {Your alliance pulls a search result for each continent on which a
   player achieved this mission as though it shared control.}
-
-\vfill
-
-\noindent%
-\covertcard%
-{Data Port}%
-{You've detected an active, unsecured data port among the wreckage
-  strewn about.  If you can hold it long enough, you might be able to
-  extract something useful.}%
-{After all deployment concludes, secretly select and record a primary
-  objective marker outside your deployment zone.  You succeed if you
-  control it at the end of your turn for any two turns in a row,
-  excluding Turn~1.}%
-{In addition to the points you earn as usual, your alliance gains half
-  the maximum victory points possible for this match toward its
-  overall and this continent.} \hfill%
-\covertcard%
-{Signals}%
-{You're tracking an enemy HQ signal.  If you can triangulate it,
-  you'll know where they're based.}%
-{After all deployment concludes, secretly select and record a table
-  quarter not on your table edge.  At game end if you have a scoring
-  unit in that quarter and your opponent does not, you succeed.  Units
-  with Objective Secured trump those without.}%
-{In addition to the points you earn as usual, your alliance gains half
-  the maximum victory points possible for this match toward its
-  overall and this continent.}
-
-\clearpage
-\restorebackground%
-
-\end{document}
